@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask阶段趣味知识竞赛</title>
+    <script src="./vue.min.js"></script>
+    <script src="./axios.min.js"></script>
+
+    <style id="rankBoxStyle">
+        #title{
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 30px;
+        }
+        #rankBox{
+            width: 300px;
+            height: 510px;
+            border: 2px solid black;
+            padding: 0;
+            background: gray;
+            opacity: 0.6;
+            display: inline-block;
+            position: fixed;
+            left: 100px;
+
+        }
+        #rankTitle{
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            border-bottom:1px solid black ;
+            margin-top: -1px;
+            line-height: 50px;
+        }
+        #rankBox li{
+            width: 95%;
+            height: 40px;
+            border: 1px solid darkslategray;
+            margin-bottom: 20px;
+            background: white;
+
+        }
+        .groupName{
+            height: 100%;
+            width: 40%;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+        }
+        #rankBox ul button{
+            margin: 0 4px;
+            width: 25px;
+            font-size: 16px;
+        }
+        button:hover{
+            color: red;
+            cursor: pointer;
+        }
+
+
+    </style>
+    <style id="questionBoxStyle">
+        #mainBox{
+            width: 800px;
+            height: 510px;
+            border: 2px solid gray;
+            display: inline-block;
+            position: fixed;
+            left: 470px;
+
+        }
+        #mainBox p{
+            width: 98%;
+            text-align: left;
+            margin:5px auto;
+            border: 2px dashed darkkhaki;
+            padding: 3px;
+            font-size: 20px;
+        }
+        #mainBox button{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin-top: 5px;
+            margin-left: 46px;
+            border-radius: 10px;
+            outline: none;
+            background: gray;
+            opacity: 0.6;
+        }
+        #mainBox button:hover{
+            color: azure;
+            background: black;
+        }
+        #buttons{
+            position: absolute;
+            bottom: 10px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<h1 id="title">深圳黑马Python就业20期Flask阶段趣味知识竞赛</h1>
+<div id="rankBox">
+    <h3 id="rankTitle">{{rankTitle}}</h3>
+    <ul>
+         <li v-for="group in groups">
+             <span class="groupName">{{ group.name }}</span>积分：<span class="groupIntegral">{{ group.integral}}</span>
+             <button class="add" v-on:click="group.integral += 1">+</button><button class="minus" v-on:click="group.integral -= 1">-</button>
+         </li>
+    </ul>
+
+</div>
+<div id="mainBox">
+    <p id="question">
+        <strong>Question:</strong><br>
+        <span v-html="temp_q"></span>
+    </p>
+    <hr>
+    <p id="answer">
+        <strong>Answer:</strong><br>
+        <span v-html="temp_a"></span>
+    </p>
+    <div id="buttons">
+    <button @click="lastT">上一题</button>
+    <button @click="nextT">下一题</button>
+    <button @click="lookAnswer">看答案</button>
+    <button @click="beginGame">开始答题</button>
+    <button @click="gameOver">结束答题</button>
+    </div>
+</div>
+
+</body>
+<script>
+    window.onload = function () {
+
+        function sortKey(array,key){
+            return array.sort(function(a,b){
+                 var x = a[key];
+                 var y = b[key];
+                 return ((x>y)?-1:(x<y)?1:0)
+            })
+        }
+
+        var oRank = new Vue({
+            el:"#rankBox",
+            data:{
+                rankTitle:"小组积分统计",
+                groups:[],
+            },
+            mounted: function () {
+                    var groups_data = localStorage.getItem("groups");
+
+                    if (groups_data == null){
+                        console.log("axios get groups data");
+                        var oVm = this;
+                        axios.get(
+                            './groups_data.json'
+                        ).then(function (resp) {
+                            oVm.groups = resp.data
+                        }).catch(function (resp) {
+                            alert("读取小组数据失败")
+                        });
+                    }else {
+                        var data = JSON.parse(groups_data);
+                        this.groups = data;
+                    }
+
+            },
+            watch:{
+                groups:{
+                    handler:function (new_val) {
+                        var data = JSON.stringify(new_val);
+                        localStorage.setItem("groups", data)
+                    },
+                    deep: true    //深度监听,因为groups是一个数组，如果不深度监听，无法监听到内部元素到修改
+                }
+
+            },
+            computed:{
+                groups_sorted:function(){
+                    return sortKey(this.groups,'integral')
+                }
+            },
+        });
+
+        var oMain = new Vue({
+            el:"#mainBox",
+            data:{
+                q_and_a:[],
+                temp_q:"Question here",
+                temp_a:"Answer here",
+                temp_index:0
+            },
+            mounted:function () {
+                var exercise_problems = localStorage.getItem("TS");
+                var temp_q = localStorage.getItem("temp_q");
+                var temp_a = localStorage.getItem("temp_a");
+                var temp_index = localStorage.getItem("temp_index");
+
+                if(temp_q != null){
+                    this.temp_q = temp_q
+                }
+                if(temp_a != null){
+                    this.temp_a = temp_a
+                }
+                if(temp_index != null){
+                    this.temp_index = parseInt(temp_index)
+                }
+
+                if(exercise_problems == null){
+                    console.log("axios get exercise problems data");
+                    var oVm1 = this;
+                    axios.get(
+                        "./exercise_problems.json"
+                    ).then(function (resp) {
+                        oVm1.q_and_a = resp.data;
+
+                    }).catch(function (resp) {
+                        alert("读取题目数据出错")
+                    })
+                }else {
+                    var data = JSON.parse(exercise_problems);
+                    this.q_and_a = data;
+                }
+
+            },
+            methods:{
+                gameOver:function () {
+                    oRank.groups = oRank.groups_sorted;
+                    oRank.rankTitle = "小组积分排名榜"
+                },
+                beginGame:function () {
+                    console.log("开始答题");
+                    this.temp_q = this.q_and_a[this.temp_index].question
+                },
+                lookAnswer:function () {
+                    console.log("看答案");
+                    if(this.temp_q == "Question here"){
+                        alert("请先看题");
+                        return false
+                    }
+                    this.temp_a = this.q_and_a[this.temp_index].answer
+                },
+                lastT:function () {
+                    console.log("上一题");
+                    if(this.temp_index == 0){
+                        alert("已经是第一题了");
+                        return false
+                    }else {
+                        this.temp_index -= 1;
+                        this.temp_q = this.q_and_a[this.temp_index].question;
+                        this.temp_a = "Answer here";
+                    }
+                },
+                nextT:function () {
+                    console.log("下一题");
+                    if(this.temp_index == (this.q_and_a.length - 1)){
+                        alert("已经是最后一题了");
+                        return false
+                    }else {
+                        this.temp_index += 1;
+                        this.temp_q = this.q_and_a[this.temp_index].question;
+                        this.temp_a = "Answer here";
+                    }
+                }
+            },
+            watch:{
+                temp_q:function (new_val, old_val) {
+                    localStorage.setItem("temp_q", new_val)
+                },
+                temp_a:function (new_val, old_val) {
+                    localStorage.setItem("temp_a", new_val)
+                },
+                temp_index:function (new_val, old_val) {
+                    localStorage.setItem("temp_index", new_val)
+                },
+                q_and_a:function (new_val, old_val) {
+                    localStorage.setItem("TS",JSON.stringify(new_val))
+                }
+            }
+        })
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</html>
