@@ -33,31 +33,31 @@
 
 - 打开windows10开发人员模式，打开步骤为：设置-->更新和安全-->针对开发人员，点击开发人员模式打开即可
 
-  ![1541383571363](./win10withUbuntu/1541383571363.png)
+  ![1541383571363](https://github.com/kerbalwzy/aboutPython/tree/master/media/win10withUbuntu/1541383571363.png)
 
-  ![1541383633833](C:\Users\kerbla_wzy\Desktop\1541383633833.png)
+  ![1541383633833](https://github.com/kerbalwzy/aboutPython/tree/master/media/win10withUbuntu/1541383633833.png)
 
 - 在控制面板中添加linux子系统，安装步骤为：控制面板-->程序-->启用或关闭windows功能，勾选”适用于windows的linux的子系统“，点击确定，如图
 
-  ![1541383771763](C:\Users\kerbla_wzy\Desktop\1541383771763.png)
+  ![1541383771763](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541383771763.png)
 
-![1541383845542](C:\Users\kerbla_wzy\Desktop\1541383845542.png)
+![1541383845542](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541383845542.png)
 
 - 在Microsoft Store搜索框中输入Ubuntu搜索，在搜索结果中点击获取这些应用。选择相应的发行版本下载即可。之后按照提示设置即可
 
-  ![1541384130298](C:\Users\kerbla_wzy\Desktop\1541384130298.png)
+  ![1541384130298](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541384130298.png)
 
-  ![1541384190822](C:\Users\kerbla_wzy\Desktop\1541384190822.png)
+  ![1541384190822](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541384190822.png)
 
-  ![1541384232348](C:\Users\kerbla_wzy\Desktop\1541384232348.png)
+  ![1541384232348](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541384232348.png)
 
 - 下载完成之后，一般会自动安装，安装好之后就可以在菜单栏中找到了。第一次启动可能需要点击应用。以后就是开机自启动了。通过在【运行】中直接输入 “bash” 就可以进入子系统的终端了
 
-  ![1541384448698](C:\Users\kerbla_wzy\Desktop\1541384448698.png)
+  ![1541384448698](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541384448698.png)
 
-  ![1541384480144](C:\Users\kerbla_wzy\Desktop\1541384480144.png)
+  ![1541384480144](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541384480144.png)
 
-![1541384662124](C:\Users\kerbla_wzy\Desktop\1541384662124.png)
+![1541384662124](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541384662124.png)
 
 - 接下来就是对子系统做一些必要的软件安装和更新了
 
@@ -118,9 +118,9 @@
 
 - 通过修改PyCharm的配置，让我们的文件都使用 UTF-8 编码
 
-  ![1541388006991](C:\Users\KERBLA~1\AppData\Local\Temp\1541388006991.png)
+  ![1541388006991](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541388006991.png)
 
 - 配置Python文件创建时的基本模板
 
-  ![1541388080952](C:\Users\kerbla_wzy\Desktop\1541388080952.png)
+  ![1541388080952](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541388080952.png)
 
