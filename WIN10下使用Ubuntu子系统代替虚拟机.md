@@ -33,9 +33,9 @@
 
 - 打开windows10开发人员模式，打开步骤为：设置-->更新和安全-->针对开发人员，点击开发人员模式打开即可
 
-  ![1541383571363](https://github.com/kerbalwzy/aboutPython/tree/master/media/win10withUbuntu/1541383571363.png)
+  ![1541383571363](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541383571363.png)
 
-  ![1541383633833](https://github.com/kerbalwzy/aboutPython/tree/master/media/win10withUbuntu/1541383633833.png)
+  ![1541383633833](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541383633833.png)
 
 - 在控制面板中添加linux子系统，安装步骤为：控制面板-->程序-->启用或关闭windows功能，勾选”适用于windows的linux的子系统“，点击确定，如图
 
