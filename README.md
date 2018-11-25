@@ -1,6 +1,6 @@
 # 关于工作中使用Python的一些收获
 
-- ### [work-miniFrame.md「WEB补充课程内容(个人编写)」](https://github.com/kerbalwzy/aboutPython/blob/master/work-miniFrame.md)
+- ### [work-miniFrame.md「WEB补充课程内容(个人编写)」](https://github.com/kerbalwzy/aboutPython/blob/master/WebSupplementaryKnowledge.md)
 
   - ##### 快速使用Nginx和uWSGI两个服务器部署一个前后端分离的项目
 
