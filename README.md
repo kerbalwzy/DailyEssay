@@ -44,3 +44,6 @@
 
 ----
 
+- ### [InstallDockerOffline 「离线安装适配Ubuntu18的Docker」](https://github.com/kerbalwzy/aboutPython/tree/master/InstallDockerOffline)
+
+  ##### 在Ubuntu18中离线安装Docker19.08稳定版, 内附 快速安装教程 和 详细安装教程
