@@ -12,7 +12,7 @@
 
 ​	docker version
 
-### 3.从官网下载安装包到安装的详细教程请查看[README_detail]()
+### 3.从官网下载安装包到安装的详细教程请查看[README_detail](https://github.com/kerbalwzy/aboutPython/blob/master/InstallDockerOffline/README_detail.md)
 
 ​	
 
