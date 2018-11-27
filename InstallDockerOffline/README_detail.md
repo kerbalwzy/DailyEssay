@@ -10,7 +10,7 @@
 
 ### 2.查看自己的Ubuntu系统的版本代号, 根据代号在浏览器上选择相应的文件夹进入
 
-![1543316641791](/Users/wzy/Documents/PythonCode/aboutPython/media/installDockerOffline/1543316641791.png)
+![1543316641791](https://github.com/kerbalwzy/aboutPython/blob/master/media/installDockerOffline/1543316641791.png)
 
 ### 3.在浏览器中访问合适的文件夹连接, 下载三个 deb 文件
 
@@ -29,7 +29,7 @@
 
 - 假如出现如上的报错,安装所需要的依赖包
 
-![1543313041671](/Users/wzy/Documents/PythonCode/aboutPython/media/installDockerOffline/1543313041671.png)
+![1543313041671](https://github.com/kerbalwzy/aboutPython/blob/master/media/installDockerOffline/1543313041671.png)
 
 -  假如出现如上的报错,安装所需要的依赖包, 然后再尝试安装 docker 的deb包
 
@@ -37,5 +37,5 @@
 
 ### 6.无报错安装后可以通过命令`docker version`查看自己的docker版本信息,检查是否安装成功
 
-![1543313263141](/Users/wzy/Documents/PythonCode/aboutPython/media/installDockerOffline/1543313263141.png)
+![1543313263141](https://github.com/kerbalwzy/aboutPython/blob/master/media/installDockerOffline/1543313263141.png)
 
