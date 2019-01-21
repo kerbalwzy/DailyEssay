@@ -47,3 +47,12 @@
 - ### [InstallDockerOffline 「离线安装适配Ubuntu18的Docker」](https://github.com/kerbalwzy/aboutPython/tree/master/InstallDockerOffline)
 
   ##### 在Ubuntu18中离线安装Docker19.08稳定版, 内附 快速安装教程 和 详细安装教程
+
+---
+
+- ### [使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析](https://github.com/kerbalwzy/aboutPython/blob/master/UesDRF-JWTtoAHUTwithOwnBackend.md)
+
+  - ##### 了解前提: 扎实的Django、DRF框架基础
+
+  - ##### 只简单的分析了处理用户登录验证时是如何找到我们自定义的backend对象的
+
