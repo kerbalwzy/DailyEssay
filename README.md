@@ -50,7 +50,7 @@
 
 ---
 
-- ### [使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析](https://github.com/kerbalwzy/aboutPython/blob/master/UesDRF-JWTtoAHUTwithOwnBackend.md)
+- ### [使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析](https://github.com/kerbalwzy/aboutPython/blob/master/UseDRF-JWTtoAHUTwithOwnBackend.md)
 
   - ##### 了解前提: 扎实的Django、DRF框架基础
 
