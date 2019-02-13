@@ -50,7 +50,7 @@
 
 ----
 
-- ### [06-Windows10Subsystem.md 「WIN10系统安装Linux子系统教程」](https://github.com/kerbalwzy/aboutPython/blob/master/Windows10Subsystem.md)
+- ### [06-Windows10Subsystem.md 「WIN10系统安装Linux子系统教程」](https://github.com/kerbalwzy/DailyEssay/blob/master/06-Windows10Subsystem.md)
 
   - #### 在Windows上使用Linux子系统的主要目的是为了使用Linux环境下的数据库, 和在将要部署时方便快速的子系统上去预演一遍.
 
@@ -58,9 +58,13 @@
 
 ---
 
-- ### [07-UseDRF-JWTtoAHUTwithOwnBackend.md「使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析」](https://github.com/kerbalwzy/aboutPython/blob/master/UseDRF-JWTtoAHUTwithOwnBackend.md)
+- ### [07-UseDRF-JWTtoAHUTwithOwnBackend.md「使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析」](https://github.com/kerbalwzy/DailyEssay/blob/master/07-UseDRF-JWTtoAHUTwithOwnBackend.md)
 
-  - ##### 了解前提: 扎实的Django、DRF框架基础
+  - #### 了解前提: 扎实的Django、DRF框架基础
 
-  - ##### 只简单的分析了处理用户登录验证时是如何找到我们自定义的backend对象的
+  - #### 只简单的分析了处理用户登录验证时是如何找到我们自定义的backend对象的
+
+----
+
+
 
