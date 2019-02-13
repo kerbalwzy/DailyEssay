@@ -1,20 +1,38 @@
-# 关于工作中使用Python的一些收获
+# DailyEssay : 日常随笔
 
-- ### [WebSupplementaryKnowledge.md「WEB补充课程内容-个人编写」](https://github.com/kerbalwzy/aboutPython/blob/master/WebSupplementaryKnowledge.md)
+- ### [01-Nginx&uWSGI&CORS「部署前后端分离项目与跨域请求限制」](https://github.com/kerbalwzy/DailyEssay/blob/master/01-Nginx%26uWSGI%26CORS.md)
 
   - ##### 快速使用Nginx和uWSGI两个服务器部署一个前后端分离的项目
 
-  - ##### 解决跨域请求限制的简单方法，认识浏览器的同源策略
+    - ##### Nginx服务器同一端口设置多个服务节点
 
-  - ##### 了解我们使用的ORM模块是如何通过我们定义的模型类获取到字段信息的
+    - ##### uWSGI服务器的基本使用
 
-  - ##### 基于uWSGI服务器和WSGI协议构建一个功能相对较为齐全的专门适用于前后端分离的WEB框架
+  - #### 解决跨域请求限制的简单方法，认识浏览器的同源策略
+
+    - ##### 浏览器的同源策略是造成跨域请求限制的主要原因
+
+    - ##### 通过响应头信息告知浏览器当前服务器允许来自某个域名的跨域请求
 
 ----
 
-- ### [FUXIclass 「Python就业加强班授课笔记」](https://github.com/kerbalwzy/aboutPython/tree/master/FUXIclass)
+- ### [02-Mateclass&ORM.md 「Python中的元类与ORM」](https://github.com/kerbalwzy/DailyEssay/blob/master/02-Mateclass%26ORM.md)
 
-  ##### 总计13天,内容囊括从基础语法到项目部署结束, 并包含一些开发经验总结
+  - #### 了解我们使用的ORM模块是如何通过我们定义的模型类获取到字段信息的
+
+    - ##### 元类，创建类的多种方式
+
+    - ##### 实现父类自动注册它的子类
+
+----
+
+- ### [03-CustomWebFramework.md 「自定义一个WEB框架」](https://github.com/kerbalwzy/DailyEssay/blob/master/03-CustomWebFramework.md)
+
+  - #### 基于uWSGI服务器和WSGI协议构建一个功能相对较为齐全的专门适用于前后端分离的WEB框架
+
+  - #### 设计我们想要的项目初始结构，和文件内容
+
+  - #### 安装miniFrame框架到site-packages中，并完善好框架需要提供的shell命令
 
 ----
 
