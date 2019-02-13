@@ -36,19 +36,13 @@
 
 ----
 
-- ### [FlaskKonwledgeGmae 「Flask趣味知识竞赛工具」](https://github.com/kerbalwzy/aboutPython/tree/master/FlaskKnowledgeGame)
+- ###  [04-InstallDockerOffline 「离线安装适配Ubuntu18的Docker」](https://github.com/kerbalwzy/DailyEssay/tree/master/04-InstallDockerOffline)
 
-  - ##### 包含一个网页交互界面,启动时请使用服务器模式提供静态文件, 不要直接通过File协议通过浏览器打开
-
-  - ##### 实现读取本地JSON格式题库文件, 切换题目, 查看答案, 结束答题时自动根据积分重新排序积分榜等功能
-
-  - ##### JS部分代码纯使用 Vue 和 axios 完成
+  - #### 在Ubuntu18中离线安装Docker19.08稳定版, 内附 快速安装教程 和 详细安装教程
 
 ----
 
-- ### [KnowledgeSummary 「WEB框架知识总结」](https://github.com/kerbalwzy/aboutPython/tree/master/KnowledgeSummary)
-
-  - ##### 主要用于末位辅导工作的框架知识点总结
+- ### [05-Flask&Django&DRFKnowledgeSummary 「Flask、Django、DRF框架知识总结」](https://github.com/kerbalwzy/DailyEssay/tree/master/05-Flask%26Django%26DRFKnowledgeSummary)
 
   - ##### 鉴于前后端分离的大趋势, 总结中忽略了部分前后端不分离使用知识
 
@@ -56,19 +50,15 @@
 
 ----
 
-- ### [Windows10Subsystem.md 「WIN10系统安装Linux子系统教程」](https://github.com/kerbalwzy/aboutPython/blob/master/Windows10Subsystem.md)
+- ### [06-Windows10Subsystem.md 「WIN10系统安装Linux子系统教程」](https://github.com/kerbalwzy/aboutPython/blob/master/Windows10Subsystem.md)
 
-  ##### 在Windows上使用Linux子系统的主要目的是为了使用Linux环境下的数据库, 和在将要部署时方便快速的子系统上去预演一遍.使用了子系统之后,在开发中就可以避免直接在Window上装各种数据库或第三方服务的麻烦和避免使用Linux虚拟机占用大量的内存
+  - #### 在Windows上使用Linux子系统的主要目的是为了使用Linux环境下的数据库, 和在将要部署时方便快速的子系统上去预演一遍.
 
-----
-
-- ### [InstallDockerOffline 「离线安装适配Ubuntu18的Docker」](https://github.com/kerbalwzy/aboutPython/tree/master/InstallDockerOffline)
-
-  ##### 在Ubuntu18中离线安装Docker19.08稳定版, 内附 快速安装教程 和 详细安装教程
+  - #### 使用了子系统之后,在开发中就可以避免直接在Window上装各种数据库或第三方服务的麻烦和避免使用虚拟机占用大量的内存
 
 ---
 
-- ### [使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析](https://github.com/kerbalwzy/aboutPython/blob/master/UseDRF-JWTtoAHUTwithOwnBackend.md)
+- ### [07-UseDRF-JWTtoAHUTwithOwnBackend.md「使用djangorestframework-jwt和自定义backend做用户登录验证源代码浅析」](https://github.com/kerbalwzy/aboutPython/blob/master/UseDRF-JWTtoAHUTwithOwnBackend.md)
 
   - ##### 了解前提: 扎实的Django、DRF框架基础
 
