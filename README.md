@@ -26,7 +26,7 @@
 
 ----
 
-- ### [03-CustomWebFramework.md 「自定义一个WEB框架」](https://github.com/kerbalwzy/DailyEssay/blob/master/03-CustomWebFramework.md)
+- ### [03-CustomWebFramework.md 「自己构建一个WEB框架」](https://github.com/kerbalwzy/DailyEssay/blob/master/03-CustomWebFramework.md)
 
   - #### 基于uWSGI服务器和WSGI协议构建一个功能相对较为齐全的专门适用于前后端分离的WEB框架
 
