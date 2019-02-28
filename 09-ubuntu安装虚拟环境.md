@@ -10,8 +10,8 @@
     以下情况你是需要python3-dev的:
     	你需要自己安装一个源外的python3类库, 而这个类库内含需要编译的调用python3 api的c/c++文件
     	你自己写的一个程序编译需要链接libpythonXX.(a|so)
-    (注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用				libpython.so)
-    其他正常使用python3或者通过安装源内的python3类库的不需要python3-		dev.
+    (注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用libpython.so)
+    其他正常使用python3或者通过安装源内的python3类库的不需要python3-dev.
     ```
 
   - 2.通过命令`pip3 install virtualenv virtualenvwrapper`安装创建和管理虚拟环境的包. 这里之所以使用pip3,是为了后续在创建虚拟环境时不需通过`-p`参数来指定就可以直接创建Python3解释器的虚拟环境.当然完成这个默认设置还需要在接下来的步骤中做一点其他操作
