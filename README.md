@@ -66,5 +66,17 @@
 
 ----
 
+- ### [08-TimingTaskInDjangoProject.md 「Django项目中添加定任务」](https://github.com/kerbalwzy/DailyEssay/blob/master/08-TimingTaskInDjangoProject.md)
 
+  - #### 了解前提:了解Django、crontab
+
+  - #### 非常简单的介绍了如何在Django批量的添加定时任务,并且稍稍提了一下“页面静态化”
+
+---
+
+- ### [09-ubuntuInstallVirtualenv.md 「Ubuntu中安装虚拟环境」](https://github.com/kerbalwzy/DailyEssay/blob/master/09-ubuntuInstallVirtualenv.md)
+
+  - #### 安装虚拟环境,并让新创建的虚拟环境默认就使用Python3解释器
+
+  - #### 一个在虚拟环境中使用`pip`的注意点——不要在命令前加`sudo`
 
