@@ -80,3 +80,8 @@
 
   - #### 一个在虚拟环境中使用`pip`的注意点——不要在命令前加`sudo`
 
+---
+
+- ### [10-HMHomeProjectTraining 「租房网项目实训难点功能」](https://github.com/kerbalwzy/DailyEssay/tree/master/10-HMHomeProjectTraining)
+
+  - #### 难点功能一 : 添加住房订单——如何避免订房时间冲突
