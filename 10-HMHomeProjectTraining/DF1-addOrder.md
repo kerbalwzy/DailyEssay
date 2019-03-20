@@ -98,29 +98,29 @@ def add_order():
         assert house.user_id != user_id, Exception("不能预定自己的房间")
         # 6.检查改房间是否存在冲突订单
         conflict_order_count = Order.query.filter(
-            					Order.house_id==house_id
-        						).filter(
-        							or_(
-                                		and_( # 对应图中的order3
-                                            Order.begin_date <= start_date
-                                        	Order.end_date >= start_date, 
-                                        ),
-                                        and_( # 对应图中的order4
-                                        	Order.begin_date <= end_date,
-                                            Order.end_date >= end_date
-                                        ),
-                                        and_( # 对应图中的order5
-                                        	Order.begin_date >= start_date,
-                                            Order.end_date <= end_date
-                                        ),
-                                        and_( # 对应图中的order6
-                                        	Order.begin_date <= start_date,
-                                            Order.end_date >= end_date
-                                        )
-                                	)
-        						).filter(
-        							Order.status.notin_(["CANCELED", "REJECTED"])
-        						).count()
+            Order.house_id==house_id
+        ).filter(
+        	or_(
+            	and_( # 对应图中的order3
+                	Order.begin_date <= start_date
+                	Order.end_date >= start_date, 
+                ),
+                and_( # 对应图中的order4
+                    Order.begin_date <= end_date,
+                    Order.end_date >= end_date
+                ),
+                and_( # 对应图中的order5
+                    Order.begin_date >= start_date,
+                    Order.end_date <= end_date
+                ),
+                and_( # 对应图中的order6
+                    Order.begin_date <= start_date,
+                    Order.end_date >= end_date
+                )
+            )
+        ).filter(
+            Order.status.notin_(["CANCELED", "REJECTED"])
+        ).count()
         assert conflict_order_count == 0, Exception("房间在该时间段内已经被预定")
         
         # 7.生成订单对象,保存订单数据
