@@ -56,11 +56,9 @@ def save_orm_object(ORM_class,**kwargs):
     try:
         # 创建数据模型类对象
         orm_ob = ORM_class()
-        
-   		for key, value in kwargs.items():
-            # 给模型类对象的指定属性赋值
-        	setattr(orm_ob, key, value)
-            
+        # 给模型类对象的指定属性赋值
+        for key, value in kwargs.items():
+        	setattr(orm_ob, key, value) 
         # 将数据保存到数据库 
         db.session.add(orm_ob)
         db.session.commit()
@@ -100,8 +98,8 @@ def add_order():
         conflict_order_count = Order.query.filter(
             Order.house_id==house_id
         ).filter(
-        	or_(
-            	and_( # 对应图中的order3
+            or_(
+                and_( # 对应图中的order3
                 	Order.begin_date <= start_date
                 	Order.end_date >= start_date, 
                 ),
