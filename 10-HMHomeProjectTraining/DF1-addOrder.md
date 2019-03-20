@@ -14,7 +14,7 @@
 
   - ##### 4.订单时间冲突图像分析
 
-    ![image-20190320174804344](/Users/wzy/Documents/PythonCode/aboutPython/media/HMHome/image-20190320174804344.png)
+    ![image-20190320174804344](https://github.com/kerbalwzy/DailyEssay/blob/master/media/HMHome/image-20190320174804344.png)
 
 - 代码:
 
