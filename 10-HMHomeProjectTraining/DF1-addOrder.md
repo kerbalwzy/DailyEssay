@@ -135,7 +135,7 @@ def add_order():
         assert all([house_id, start_date_str, end_date_str]), Exception("参数错误")
         house_id = int(house_id)
     	# 3.检查入住时间是否合法, 并转换为默认最早入住时间与最晚退房时间, 并获取入住天数统计
-        start_date, end_date, days = check_order_date(start_date_str, end_date_str)
+        begin_date, end_date, days = check_order_date(start_date_str, end_date_str)
     	# 4.检查要租住的房间是否存在
         house = House.query.get(house_id)
         assert house != None, Exception("房间不存在")
