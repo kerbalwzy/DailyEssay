@@ -106,7 +106,7 @@ def save_orm_object(ORM_class,**kwargs):
         orm_ob = ORM_class()
         # 给模型类对象的指定属性赋值
         for key, value in kwargs.items():
-        	setattr(orm_ob, key, value) 
+            setattr(orm_ob, key, value) 
         db.session.add(orm_ob)
         db.session.commit()
     except Exception as e:
