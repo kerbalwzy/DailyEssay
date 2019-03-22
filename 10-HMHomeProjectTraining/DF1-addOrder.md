@@ -2,7 +2,9 @@
 
 ----
 
-- 难点:如何保证不会添加出 对同一个房间 存在 住房时间冲突 的订单? 即假如想在我想入住 007号房 ,想要入住时间是 3月10日–3月20日 ,那么如果已经存在对这个 007号房的有效订单与我的想要入住的时间有重叠,那么后台就不能让房客成功下这个订单, 防止出现一房同时被两个人租用的乌龙情况
+- 难点:如何保证不会添加出 对同一个房间 存在 住房时间冲突 的订单? 即假如想在我想入住 007号房 ,想要入住时间是 3月10日–3月20日 ,那么如果已经存在对这个 007号房的有效订单与我的想要入住的时间有重叠,那么后台就不能让房客成功下这个订单, 防止出现一房同时被两个人租用的乌龙情况.
+
+  - ⚠️注意一 :  默认开始时间为开始日期的当天14点整, 结束时间为结束日期当天12点整
 
 - 分析:
 
@@ -14,9 +16,55 @@
 
   - ##### 4.订单时间冲突图像分析
 
-    ![image-20190320174804344](https://github.com/kerbalwzy/DailyEssay/blob/master/media/HMHome/image-20190320174804344.png)
+    ![image-20190322101038331](/Users/wzy/Documents/PythonCode/aboutPython/media/HMHome/image-20190320174804344.png)
+
+    - 思路一: 直接找冲突订单有哪些情况,从上图可以分析出,如果是冲突订单有以下三种(or)情况:
+
+      - 1.冲突订单的结束时间在我想要预定的时间范围内
+
+      - 2.冲突订单的开始时间在我想要预定的时间范围内
+
+      - 3.冲突订单的开始时间到结束时间完全包裹或者等于我想要预定的时间
+
+      - 以上三种情况的ORM的查询条件代码如下:
+
+        ```python
+        or_(
+            # 对应图中的order3与分析情况1
+        	and_(Order.end_date > begin_date, Order.end_date <= end_date),
+            # 对应图中的order4与分析情况2
+            and_(Order.begin_date >= begin_date, Order.begin_date < end_date),
+            # 图中的order5已经被分析情况1,2所包含
+            # 对应图中的order6与分析情况3 
+            and_(Order.begin_date <= begin_date, Order.end_date >= end_date)
+            # 是否需要添加“=”号,请仔细思考“⚠️注意一”
+        )
+        ```
+
+    - 思路二: 找不冲突的订单有哪些情况,然后取反获取到冲突的订单.不冲突的情况有以下两种(or)情况:
+
+      - 1.不冲突的订单的结束时间一定在我想要预定的开始时间之前
+
+      - 2.不冲突的订单的开始时间一定在我想要预定的结束时间之后
+
+      - 加入取反操作后的以上两种情况的ORM的查询条件如下:
+
+        ```python
+        not_(
+            # 情况1,2之间的关系为or, 是否需要添加“=”号,请仔细思考“⚠️注意一”
+        	or_(Order.end_date < begin_date, Order.begin_date > end_date)
+        )
+        ```
 
 - 代码:
+
+  - 使用`assert`断言取代if判断,用抛出异常的方式最终用一个`try...except...`来返回我们自定义的验证响应
+  - 将对某些参数的验证步骤特别多的代码(`check_order_date`)抽取成函数,简化主逻辑代码
+  - 将某些需要经常写的,但是可以复用的代码抽取出来(`save_orm_object`)
+    - !1. 一个代码块的代码不要太长
+    - !2.不要写太多的`if`判断
+    - !3.不要写太多的`try...except..`
+    - !4.同样操作的代码不要写很多遍,抽取出来复用!!!
 
 ```python
 from datetime import datetime
@@ -59,7 +107,6 @@ def save_orm_object(ORM_class,**kwargs):
         # 给模型类对象的指定属性赋值
         for key, value in kwargs.items():
         	setattr(orm_ob, key, value) 
-        # 将数据保存到数据库 
         db.session.add(orm_ob)
         db.session.commit()
     except Exception as e:
@@ -88,7 +135,7 @@ def add_order():
         assert all([house_id, start_date_str, end_date_str]), Exception("参数错误")
         house_id = int(house_id)
     	# 3.检查入住时间是否合法, 并转换为默认最早入住时间与最晚退房时间, 并获取入住天数统计
-        begin_date, end_date, days = check_order_date(start_date_str, end_date_str)
+        start_date, end_date, days = check_order_date(start_date_str, end_date_str)
     	# 4.检查要租住的房间是否存在
         house = House.query.get(house_id)
         assert house != None, Exception("房间不存在")
@@ -96,27 +143,16 @@ def add_order():
         assert house.user_id != user_id, Exception("不能预定自己的房间")
         # 6.检查改房间是否存在冲突订单
         conflict_order_count = Order.query.filter(
+            # 过滤一: 只找当前房间的订单
             Order.house_id==house_id
         ).filter(
-            or_(
-                and_( # 对应图中的order3
-                	Order.begin_date <= start_date
-                	Order.end_date >= start_date, 
-                ),
-                and_( # 对应图中的order4
-                    Order.begin_date <= end_date,
-                    Order.end_date >= end_date
-                ),
-                and_( # 对应图中的order5
-                    Order.begin_date >= start_date,
-                    Order.end_date <= end_date
-                ),
-                and_( # 对应图中的order6
-                    Order.begin_date <= start_date,
-                    Order.end_date >= end_date
-                )
-            )
+            # 过滤二: 查找冲突的订单
+            # 采用思路二
+            not_(
+				or_(Order.end_date < begin_date, Order.begin_date > end_date)
+			)		
         ).filter(
+            # 过滤三: 避开无效订单
             Order.status.notin_(["CANCELED", "REJECTED"])
         ).count()
         assert conflict_order_count == 0, Exception("房间在该时间段内已经被预定")
