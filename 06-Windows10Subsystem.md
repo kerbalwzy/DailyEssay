@@ -118,7 +118,7 @@
 
 - 通过修改PyCharm的配置，让我们的文件都使用 UTF-8 编码
 
-  ![1541388006991](https://github.com/kerbalwzy/aboutPython/blob/master/media/win10withUbuntu/1541388006991.png)
+  ![1541388006991](https://github.com/kerbalwzy/DailyEssay/blob/master/media/win10withUbuntu/1541388080951.png)
 
 - 配置Python文件创建时的基本模板
 
