@@ -85,3 +85,13 @@
 - ### [10-HMHomeProjectTraining 「租房网项目实训难点功能」](https://github.com/kerbalwzy/DailyEssay/tree/master/10-HMHomeProjectTraining)
 
   - #### 难点功能一 : 添加住房订单——如何避免订房时间冲突
+
+---
+
+- ### [11-CeleryAndTimingTasks.md「Celery框架快速使用,并实现定时任务」](https://github.com/kerbalwzy/DailyEssay/blob/master/11-CeleryAndTimingTasks.md)
+
+  - #### 认识Celery
+
+  - #### 快速创建Celery服务, 及调用异步任务的demo, 及简单说明
+
+  - #### 使用Celery构建定时任务的简单Demo
