@@ -98,6 +98,6 @@ class DemoToken:
 
 在我的测试中, 对于一个Python中字典类型的原始数据最终能可以生成的Token是下面这样的, 并且也能从Token中解析出原始数据, 如果Token不正确或者时间过期也能抛出异常.
 
-![image-20190702232902025](/Users/wzy/GitProrgram/DailyEssay/media/work-afterclass/image-20190702232902025.png)
+![image-20190702232902025](https://github.com/kerbalwzy/DailyEssay/blob/master/media/work-afterclass/image-20190702232902025.png)
 
 ###### ⚠ 接下来你就参考一下代码写出自己的Token生成类,并测试功能吧
