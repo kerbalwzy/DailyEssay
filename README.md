@@ -95,3 +95,11 @@
   - #### 快速创建Celery服务, 及调用异步任务的demo, 及简单说明
 
   - #### 使用Celery构建定时任务的简单Demo
+
+---
+
+- ### [12-CustomTokenGenerationClass.md「创建自定义的Token生成类」](<https://github.com/kerbalwzy/DailyEssay/blob/master/12-CustomTokenGenerationClass.md>)
+
+  - #### 能在Python的原始数据和Token字符串之间相互转换
+
+  - #### Token可以设置自定义有效时间
