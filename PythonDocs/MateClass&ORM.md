@@ -14,7 +14,7 @@
 
   实际上Python中所有的类都是元类type创建的，因为你自己定义的mateclass也是必须要继承于type。
 
-  ![image-20180728094941376](./media/work-miniFrame-images/image-20180728094941376.png)
+  ![image-20180728094941376](../media/work-miniFrame-images/image-20180728094941376.png)
 
 - #### 创建类的两种方式
 
@@ -52,7 +52,7 @@
 
   在框架的ORM映射的学习中，同学通常有一个疑问🤔️，那就是做模型类迁移在数据库中创建出相应的数据表的时候，ORM模块是如何拿到我们定义的那些字段信息的？例如下面的模型类代码：
 
-  ![image-20180728112553040](./media/work-miniFrame-images/image-20180728112553040.png)
+  ![image-20180728112553040](../media/work-miniFrame-images/image-20180728112553040.png)
 
   这里的疑问就是：模型类迁移时是如何拿到UserInfo类下的id、avatar、nick_name..等这些类属性的信息的？我们好像并没有创建实例对象，也没有自己通过类对象手动去获取这些类属性。
 
@@ -98,7 +98,7 @@
 
   ##### 从打印结果来看，我们已经成功记录了所有创建子类的信息，那么我们现在大概知道`ORM模块`是如何获取我们定义的模型类里的字段属性信息了吧✌️：
 
-  ![image-20180728151253393](./media/work-miniFrame-images/image-20180728151253393.png)
+  ![image-20180728151253393](../media/work-miniFrame-images/image-20180728151253393.png)
 
 ------
 
