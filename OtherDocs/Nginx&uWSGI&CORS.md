@@ -107,7 +107,7 @@
 
   如图的最后两行所示
 
-  ![image-20180728091958245](./media/work-miniFrame-images/image-20180728091958245.png)
+  ![image-20180728091958245](../media/work-miniFrame-images/image-20180728091958245.png)
 
   ###### 再尝试在浏览器中直接访问 www.miniweb.com 请求静态文件。
 
