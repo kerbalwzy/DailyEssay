@@ -1,6 +1,6 @@
 # DailyEssay - Others
 
-### [01-部署前后端分离项目与解决跨域问](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/Nginx%26uWSGI%26CORS.md)
+### [01-部署前后端分离项目与解决跨域问题](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/Nginx%26uWSGI%26CORS.md)
 
 ```
 - 快速使用Nginx和uWSGI两个服务器部署一个前后端分离的项目

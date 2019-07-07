@@ -4,7 +4,7 @@
 
 | 目录导航                                                     |
 | ------------------------------------------------------------ |
-| [01-部署前后端分离项目与解决跨域问](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/Nginx%26uWSGI%26CORS.md) |
+| [01-部署前后端分离项目与解决跨域问题](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/Nginx%26uWSGI%26CORS.md) |
 | [02-Ubuntu18.04安装docker](https://github.com/kerbalwzy/DailyEssay/tree/master/OtherDocs/InstallDockerOffline) |
 | [03-Windows10安装Linux子系统](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/Windows10Subsystem.md) |
 
