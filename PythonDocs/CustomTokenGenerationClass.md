@@ -13,6 +13,7 @@
 import pickle
 import base64
 import time
+import hmac
 
 # 用来验证的密钥字符串
 DEMO_TOKEN_SECRET_KEY = "jxina@89rqknzs_9349@133&^$93NKNFA&jhfak"
@@ -23,76 +24,94 @@ from django.conf import settings as S
 DEMO_TOKEN_SECRET_KEY = getattr(S, "DEMO_TOKEN_SECRET_KEY", False) or S.SECRET_KEY
 """
 
+
 class TokenError(Exception):
     def __str__(self):
         return "无效的Token"
 
 
 class DemoToken:
-	"""
-	自定义的Token生成类, 在对象初始化时支持参数 
-	secret_key 	密钥字符串 String
-	time_out 	有效时间 int
-	split_tag 	拼接和切割的标识字符串 String
-	并且这三个参数都是缺省参数
-	
-	提供生成Token的公共方法: create_token
-	提供解析Token的公共方法: parse_token
-	"""
-    def __init__(self, secret_key=DEMO_TOKEN_SECRET_KEY, time_out=60 * 2, split_tag="\b\b\b\b"):
-        self.__secret_key = secret_key
+    """
+    自定义的Token生成类, 在对象初始化时支持参数
+    secret_key 	密钥字符串 String
+    time_out 	有效时间 int
+    split_tag 	拼接和切割的标识字符串 String
+    并且这三个参数都是缺省参数
+
+    提供生成Token的公共方法: create_token
+    提供解析Token的公共方法: parse_token
+    """
+
+    def __init__(self, secret_key=DEMO_TOKEN_SECRET_KEY,
+                 time_out=30, split_tag="\b\b\b\b"):
+
+        self.__secret_key = secret_key.encode()
         self.__time_out = time_out
         self.__split_tag = split_tag
 
     def create_token(self, data):
         """
-        生成加密token， 包含三部分信息：原始数据，密钥字符串，有效截止时间戳
-        首先使用pickle将这三部分内容都转化为Bytes类型
-        然后进行base64的加密， 原始数据使用b64, 密钥字符串使用b32, 时间戳使用b16
-        将三个加密后得到的字符串使用self.__split_tag拼接成一个字符串， 作为token_raw
-        将token_raw使用b85加密的结果作为最终返回的Token
+        生成加密token， 包含三部分信息：经过编码后的数据(data)，有效期截止时间戳(end_time)，认证密钥(signature)
+
+        首先使用pickle将 原始数据、有效期截止时间 都转化为Bytes类型
+        原始数据使用b64进行编码, 有效截止时间戳使用b16进行编码
+
+        使用hmac模块，对 原始数据+有效截止时间 获取一个MD5的加密字符串作为认证密钥
+
+        将三个编码或加密后得到的字符串使用self.__split_tag拼接成一个字符串， 作为原始的token字符串(raw_token)
+
+        将raw_token进行b85编码的结果作为最终返回的Token
 
         :param data: 原始数据 Type
         :return: token: 生成的token String
         """
-        dp = pickle.dumps(data)
-        sp = pickle.dumps(self.__secret_key)
-        tp = pickle.dumps(time.time() + self.__time_out)
+        data = pickle.dumps(data)
+        end_time = pickle.dumps(time.time() + self.__time_out)
 
-        dpbs = base64.b64encode(dp).decode()
-        spbs = base64.b32encode(sp).decode()
-        tpbs = base64.b16encode(tp).decode()
+        data = base64.b64encode(data)
+        end_time = base64.b16encode(end_time)
 
-        token_raw = self.__split_tag.join([dpbs, spbs, tpbs])
+        # 使用hmac获取数据的认证密钥，用来在认证token时检查内容是否被修改过
+        signature = hmac.new(self.__secret_key, msg=(data + end_time), digestmod="MD5").hexdigest()
+
+        token_raw = self.__split_tag.join([signature, data.decode(), end_time.decode()])
         token = base64.b85encode(token_raw.encode()).decode()
+
         return token
 
     def parse_token(self, token):
         """
         解析token，解密方式为create_token的逆向解析
-        如果解析的过程中出现异常或者Token过期或者密钥字符串不对都会抛出异常
+
+        如果解析的过程中出现异常或者Token过期或者认证密钥对比失败都会抛出异常
+
         否则返回原始数据
 
         :param token: String
         :return: data: Type
         """
-
-        token_raw = base64.b85decode(token.encode()).decode()
-        dpbs, spbs, tpbs = token_raw.split(self.__split_tag)
-
         try:
-            tpr = pickle.loads(base64.b16decode(tpbs.encode()))
-            assert tpr > time.time(), "Time Out"
+            token_raw = base64.b85decode(token.encode()).decode()
+            signature, data, end_time = token_raw.split(self.__split_tag)
 
-            spr = pickle.loads(base64.b32decode(spbs.encode()))
-            assert spr == self.__secret_key, "Token Parse Error"
+            data = data.encode()
+            end_time = end_time.encode()
 
-            dpr = pickle.loads(base64.b64decode(dpbs.encode()))
+            # 对比检查认证密钥
+            h = hmac.new(self.__secret_key, msg=(data + end_time), digestmod="MD5")
+            signature_want = h.hexdigest()
+            print(signature_want + "\n", signature)
+            assert signature == signature_want, "Token Error"
+
+            # 检查有效期是否已过
+            end_time = pickle.loads(base64.b16decode(end_time))
+            assert end_time > time.time(), "Time Out"
+
+            data = pickle.loads(base64.b64decode(data))
         except Exception:
             raise TokenError()
-
         else:
-            return dpr
+            return data
 
 ```
 
