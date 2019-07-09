@@ -8,12 +8,6 @@
 | [02-Ubuntu18.04安装docker](https://github.com/kerbalwzy/DailyEssay/tree/master/OtherDocs/InstallDockerOffline) |
 | [03-Windows10安装Linux子系统](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/Windows10Subsystem.md) |
 
-
-
-
-
-
-
 ## [PythonDocs](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocsReadMe.md)
 
 | 目录导航                                                     |
@@ -26,5 +20,5 @@
 | [06-Django中使用crontab创建定时任务](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/TimingTaskInDjangoProject.md) |
 | [07-DRF-JWT内置认证视图类源码浅析](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/UseDRF-JWTtoAHUTwithOwnBackend.md) |
 | [08-Celery框架的基本使用与用它创建定时任务](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CeleryAndTimingTasks.md) |
-| [09-自定义一个Token生成类,支持有效期检查](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CustomTokenGenerationClass.md) |
+| [09-自定义一个Token生成类,支持签名和有效期检查](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CustomTokenGenerationClass.md) |
 
