@@ -22,3 +22,9 @@
 | [08-Celery框架的基本使用与用它创建定时任务](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CeleryAndTimingTasks.md) |
 | [09-自定义一个Token生成类,支持签名和有效期检查](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CustomTokenGenerationClass.md) |
 
+## [GolangDocs](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocsReadMe.md)
+
+| 目录导航                                                     |
+| ------------------------------------------------------------ |
+| [01switch结构的两个注意点: case 后用逗号隔开多个条件、 fallthrough 的使用特点](https://github.com/kerbalwzy/DailyEssay/commit/0b85bf4e6002adb7a5cf0f64222248ade52b939f) |
+
