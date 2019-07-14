@@ -26,5 +26,5 @@
 
 | 目录导航                                                     |
 | ------------------------------------------------------------ |
-| [01-switch结构的两个注意点: case 后用逗号隔开多个条件、 fallthrough 的使用特点](https://github.com/kerbalwzy/DailyEssay/commit/0b85bf4e6002adb7a5cf0f64222248ade52b939f) |
+| [01-switch结构的两个注意点: case 后用逗号隔开多个条件、 fallthrough 的使用特点](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/SpecialPoint_switch.md) |
 
