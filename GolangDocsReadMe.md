@@ -7,3 +7,10 @@
 - 在分支中添加fallthrough后, 只要当前分支执行了, 那么下一分支也一定会执行
 ```
 
+### [02-直接声明数组和使用new关键字声明数组的区别](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/SpecialPoint_array.md>)
+
+```
+- 直接声明是值类型, 使用了new关键字是指针类型
+- %v 打印数据默认格式, %T 打印数据类型
+```
+
