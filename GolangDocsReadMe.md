@@ -14,3 +14,10 @@
 - %v 打印数据默认格式, %T 打印数据类型
 ```
 
+### [03-递归在Golang中的优势](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/recursionInGo.md)
+
+```
+- Golang中函数调用栈使用可变大小栈
+- Golang中使用递归不必考虑溢出和安全问题
+```
+
