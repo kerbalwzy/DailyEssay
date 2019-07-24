@@ -24,3 +24,4 @@
 - 使用了子系统之后,在开发中就可以避免直接在Window上装各种数据库或第三方服务的麻烦和避免使用虚拟机占用大量的内存
 ```
 
+### [04-MySQL误删root用户或忘记root用户密码](https://github.com/kerbalwzy/DailyEssay/blob/master/OtherDocs/MySQLRemoveRootUser.md)
