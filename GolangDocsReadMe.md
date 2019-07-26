@@ -21,3 +21,11 @@
 - Golang中使用递归不必考虑溢出和安全问题
 ```
 
+### [04-重要的并发安全, 解决资源竞争问题](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/concurrentlySecure.md>)
+
+```
+- 容量为1的channel
+- sync.Mutex 互斥锁
+- sync.RWMutex 读写锁
+```
+

@@ -30,4 +30,5 @@
 | [01-switch结构的两个注意点: case 后用逗号隔开多个条件、 fallthrough 的使用特点](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/SpecialPoint_switch.md) |
 | [02-直接声明数组和使用new关键字声明数组的区别](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/SpecialPoint_array.md>) |
 | [03-递归在Golang中的优势](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/recursionInGo.md) |
+| [04-重要的并发安全, 解决资源竞争问题](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/concurrentlySecure.md>) |
 
