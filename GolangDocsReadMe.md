@@ -29,3 +29,11 @@
 - sync.RWMutex 读写锁
 ```
 
+### [05-使用MD5和base64创建一个Token生成函数和校验函数](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/base64MD5Token.md)
+
+```
+- MD5
+- base64编解码
+- gob编解码
+```
+
