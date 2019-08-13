@@ -1,4 +1,4 @@
-## Grpc-纯Golang的客户端与服务端demo
+## Grpc-纯Python的客户端与服务端demo
 
 - #### 设计demo项目结构目录如下图:
 
