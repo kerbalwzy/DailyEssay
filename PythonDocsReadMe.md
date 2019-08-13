@@ -66,3 +66,19 @@
 - Token可以设置自定义有效时间
 ```
 
+### [10-Python中使用GRPC开发的环境配置](<https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/GrpcEnvWithPython.md>)
+
+```
+- grpcio
+- grpcio-tools
+```
+
+### [11-Grpc-纯Python的客户端与服务端demo](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/GrpcDemo.md)
+
+```
+- 简单模式
+- 客户端流模式
+- 服务端流没收
+- 双向流模式
+```
+
