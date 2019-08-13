@@ -49,10 +49,14 @@
 
   - 接下来你就可以愉快的写代码了
 
-- 起步教程见如下文章:
+- ### 起步教程见如下文章:
 
-  - [grpc-纯Go的客户端与服务端demo]()
+  - [grpc-纯Go的客户端与服务端demo](./GrpcDemo.md)
+
     - [Golang使用grpc的环境安装](#)
-  - [grpc-纯Python的客户端与服务端demo]()
+
+  - [grpc-纯Python的客户端与服务端demo](../PythonDocs/GrpcDemo.md)
+
     - [Python使用grpc的环境安装](../PythonDocs/GrpcEnvWithPython.md)
-  - [grpc-Python与Go的客户端与服务端(服务端与客户端)demo]()
+
+  - #### ⚠️ 其实这里Python的客户端也能访问Go的服务端, Go的客户端也能访问Python的服务端, 因为我用的是同一个proto文件, 这就是GRPC的魅力所在
