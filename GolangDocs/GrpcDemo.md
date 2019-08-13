@@ -2,7 +2,7 @@
 
 - #### 设计demo项目结构目录如下图:
 
-  ![image-20190813113745611](/Users/wzy/GitProrgram/DailyEssay/media/grpc/image-20190813113745611.png)
+  ![image-20190813113745611](../media/grpc/image-20190813113745611.png)
 
 - #### 接下来就是编写我们的`demo.proto`文件了, 使用的语法是`proto3`
 
@@ -50,7 +50,7 @@ protoc -I ./ ./demo.proto --go_out=plugins=grpc:./customGrpcPackages
 
 则会在当前目录的`customGrpcPackages`文件夹下生成一个`demo.pb.go`的文件
 
-![image-20190813113420644](/Users/wzy/GitProrgram/DailyEssay/media/grpc/image-20190813113420644.png)
+![image-20190813113420644](../media/grpc/image-20190813113420644.png)
 
 - #### 接下来就是写代码了	 [GitHub代码仓库](<https://github.com/kerbalwzy/Py-GoGprcDemo>)
 
