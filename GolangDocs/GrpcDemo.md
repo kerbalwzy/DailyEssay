@@ -4,7 +4,7 @@
 
   - `protos/demo.pb.go`文件是后续通过`protoc`工具自动生成的, 不需要自己创建
 
-  ![image-20190915155200408](/Users/wzy/GitPrograms/DailyEssay/media/grpc/image-20190915155200408.png)
+  ![image-20190915155200408](../media/grpc/image-20190915155200408.png)
 
 - #### 接下来就是编写我们的`protos/demo.proto`文件了, 使用的语法是`proto3`
 
