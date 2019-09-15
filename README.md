@@ -22,8 +22,8 @@
 | [07-DRF-JWT内置认证视图类源码浅析](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/UseDRF-JWTtoAHUTwithOwnBackend.md) |
 | [08-Celery框架的基本使用与用它创建定时任务](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CeleryAndTimingTasks.md) |
 | [09-自定义一个Token生成类,支持签名和有效期检查](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/CustomTokenGenerationClass.md) |
-| [10-Python中使用GRPC开发的环境配置](<https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/GrpcEnvWithPython.md>) |
-| [11-Grpc-纯Python的客户端与服务端demo](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/GrpcDemo.md) |
+| [10-Python中使用gRPC开发的环境配置](<https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/GrpcEnvWithPython.md>) |
+| [11-gRPC-纯Python的客户端与服务端Demo](https://github.com/kerbalwzy/DailyEssay/blob/master/PythonDocs/GrpcDemo.md) |
 
 ## [GolangDocs](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocsReadMe.md)
 
@@ -34,6 +34,6 @@
 | [03-递归在Golang中的优势](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/recursionInGo.md) |
 | [04-重要的并发安全, 解决资源竞争问题](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/concurrentlySecure.md>) |
 | [05-使用MD5和base64创建一个Token生成函数和校验函数](https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/base64MD5Token.md) |
-| [06-Mac上安装Golang的GRPC开发环境](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcEnvWithGolang_Mac.md>) |
-| [07-Grpc纯Go的客户端与服务端demo](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcDemo.md>) |
+| [06-Mac上安装Golang的gRPC开发环境](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcEnvWithGolang_Mac.md>) |
+| [07-gRPC纯Go的客户端与服务端Demo](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcDemo.md>) |
 

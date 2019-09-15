@@ -1,4 +1,4 @@
-## Mac上安装protoc、grpc、以及Go语言插件protoc-gen-go
+## Mac上安装protoc、gRPC、以及Go语言插件protoc-gen-go
 
 - ### 安装protoc (通过homebrew安装)
 
@@ -6,7 +6,7 @@
   brew install protoc
   ```
 
-- ### 下载grpc及Go语言插件protoc-gen-go及相关依赖
+- ### 下载gRPC及Go语言插件protoc-gen-go及相关依赖
 
   ##### 如果你能`科学上网`事情很简单
 
@@ -51,12 +51,12 @@
 
 - ### 起步教程见如下文章:
 
-  - [grpc-纯Go的客户端与服务端demo](./GrpcDemo.md)
+  - [gRPC-纯Go的客户端与服务端demo](./GrpcDemo.md)
 
-    - [Golang使用grpc的环境安装](#)
+    - [Golang使用gRPC的环境安装](#)
 
-  - [grpc-纯Python的客户端与服务端demo](../PythonDocs/GrpcDemo.md)
+  - [gRPC-纯Python的客户端与服务端demo](../PythonDocs/GrpcDemo.md)
 
-    - [Python使用grpc的环境安装](../PythonDocs/GrpcEnvWithPython.md)
+    - [Python使用gRPC的环境安装](../PythonDocs/GrpcEnvWithPython.md)
 
-  - #### ⚠️ 其实这里Python的客户端也能访问Go的服务端, Go的客户端也能访问Python的服务端, 因为我用的是同一个proto文件, 这就是GRPC的魅力所在
+  - #### ⚠️ 其实这里Python的客户端也能访问Go的服务端, Go的客户端也能访问Python的服务端, 因为我用的是同一个proto文件, 这就是gRPC的魅力所在

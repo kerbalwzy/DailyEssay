@@ -37,14 +37,14 @@
 - gob编解码
 ```
 
-### [06-Mac上安装Golang的GRPC开发环境](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcEnvWithGolang_Mac.md>)
+### [06-Mac上安装Golang的gRPC开发环境](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcEnvWithGolang_Mac.md>)
 
 ```
 - GRPC
 - protoc
 ```
 
-### [07-Grpc纯Go的客户端与服务端demo](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcDemo.md>)
+### [07-gRPC纯Go的客户端与服务端Demo](<https://github.com/kerbalwzy/DailyEssay/blob/master/GolangDocs/GrpcDemo.md>)
 
 ```
 - 简单模式
