@@ -5,21 +5,26 @@
 - ##### 前后端不分离
 
   ```
-  在前后端不分离的应用模式中，前端页面看到的效果都是由后端控制，由后端渲染页面或重定向，也就是后端需要控制前端的展示，前端与后端的耦合度很高。
-  这种应用模式比较适合纯网页应用，但是当后端对接App时，App可能并不需要后端返回一个HTML网页，而仅仅是数据本身，所以后端原本返回网页的接口不再适用于前端App应用，为了对接App后端还需再开发一套接口。
+  在前后端不分离的应用模式中，前端页面看到的效果都是由后端控制，由后端渲染页面或重定向，也就是后端需要控
+  制前端的展示，前端与后端的耦合度很高。
+  这种应用模式比较适合纯网页应用，但是当后端对接App时，App可能并不需要后端返回一个HTML网页，而仅仅是数
+  据本身，所以后端原本返回网页的接口不再适用于前端App应用，为了对接App后端还需再开发一套接口。
   ```
 
 - ##### 前后端分离
 
   ```
-  在前后端分离的应用模式中，后端仅返回前端所需的数据，不再渲染HTML页面，不再控制前端的效果。至于前端用户看到什么效果，从后端请求的数据如何加载到前端中，都由前端自己决定，网页有网页的处理方式，App有App的处理方式，但无论哪种前端，所需的数据基本相同，后端仅需开发一套逻辑对外提供数据即可。
+  在前后端分离的应用模式中，后端仅返回前端所需的数据，不再渲染HTML页面，不再控制前端的效果。至于前端用户
+  看到什么效果，从后端请求的数据如何加载到前端中，都由前端自己决定，网页有网页的处理方式，App有App的处理
+  方式，但无论哪种前端，所需的数据基本相同，后端仅需开发一套逻辑对外提供数据即可。
   在前后端分离的应用模式中 ，前端与后端的耦合度相对较低。
   ```
 
 - ##### 接口或API
 
   ```
-  在前后端分离的应用模式中，我们通常将后端开发的每个视图都称为一个接口，或者API，前端通过访问接口来对数据进行增删改查。
+  在前后端分离的应用模式中，我们通常将后端开发的每个视图都称为一个接口，或者API，前端通过访问接口来对数据
+  进行增删改查。
   ```
 
 ---
@@ -37,13 +42,15 @@
 - ##### 序列化
 
   ```
-  将程序中的一个数据结构类型转换为其他格式（字典、JSON、XML等），例如将Django中的模型类对象装换为JSON字符串，这个转换过程我们称为序列化。
+  将程序中的一个数据结构类型转换为其他格式（字典、JSON、XML等），例如将Django中的模型类对象装换为JSON
+  字符串，这个转换过程我们称为序列化。
   ```
 
 - ##### 反序列化
 
   ```
-  将其他格式（字典、JSON、XML等）转换为程序中的数据，例如将JSON字符串转换为Django中的模型类对象，这个过程我们称为反序列化。
+  将其他格式（字典、JSON、XML等）转换为程序中的数据，例如将JSON字符串转换为Django中的模型类对象，这个
+  过程我们称为反序列化。
   ```
 
 ----
@@ -74,18 +81,24 @@
   ```
   1.根据模型类和数据需求去创将一个序列化器类
   2.查询出一个模型类的对象或查询集
-  3.创建对应的序列化器对象，将模型类的对象或查询集作为初始化实参传给形参instance，当是查询集时需要额外附带一个参数：many=True。
+  3.创建对应的序列化器对象，将模型类的对象或查询集作为初始化实参传给形参instance，当是查询集时需要额外
+  附带一个参数：many=True。
   4.通过序列化器对象的 data 属性，即可获得获得序列化之后的数据。
-  注：步骤就是这么简单，重点在于定义序列化器类时给字段设置的数据类型和约束条件。如果与模型类不匹配可能会出现问题。
+  注：步骤就是这么简单，重点在于定义序列化器类时给字段设置的数据类型和约束条件。如果与模型类不匹配可能会
+  出现问题。
   ```
 
 - ##### 反序列化功能
 
   ```
   1.获取从前端发送来的数据，并将数据转换为Python的字典类型。
-  2.创建对应的序列化器对象，将数据字典作为初始化实参传给形参data。如果是update操作，instance形参也要接实参，还如果是部分update的话，需要额外附带一个参数：partial=True
-  3.调用序列化器的 is_valid()方法检验数据，此方法返回一个布尔值，当结果为True时才能继续执行代码。可以通过在这个方法中传入参数：raise_exception=True，当验证失败时会直接中止当前视图并向前端返回一个HTTP 400 Bad Request的响应。
-  4.验证成功，可以通过序列化器对象的validated_data属性获取验证后的数据，拿去做其他使用。也可以通过调用序列化器对象的save方法,尝试将数据保存到数据库.
+  2.创建对应的序列化器对象，将数据字典作为初始化实参传给形参data。如果是update操作，instance形参也要
+  接实参，还如果是部分update的话，需要额外附带一个参数：partial=True
+  3.调用序列化器的 is_valid()方法检验数据，此方法返回一个布尔值，当结果为True时才能继续执行代码。可以
+  通过在这个方法中传入参数：raise_exception=True，当验证失败时会直接中止当前视图并向前端返回一个HTTP
+  400 Bad Request的响应。
+  4.验证成功，可以通过序列化器对象的validated_data属性获取验证后的数据，拿去做其他使用。也可以通过调用
+  序列化器对象的save方法,尝试将数据保存到数据库.
   ```
 
 ----
@@ -115,11 +128,11 @@
 
   ```
   1.在普通序列化器类和模型类序列化器类中作为 类属性显示声明:
-  	属性值可以是以下几种:
-  		1.serializers.PrimaryKeyRelatedField(*args)			关联字段的主键
-          2.serializers.HyperlinkedRelatedField(*args)		关联对象数据的接口链接
-          3.serializers.SlugRelatedField(*args)				关联对象的指定字段数据
-          4.直接是关联对象的序列化器								关联对象的所有数据
+  属性值可以是以下几种:
+  1.serializers.PrimaryKeyRelatedField(*args)			关联字段的主键
+  2.serializers.HyperlinkedRelatedField(*args)		关联对象数据的接口链接
+  3.serializers.SlugRelatedField(*args)				关联对象的指定字段数据
+  4.直接是关联对象的序列化器								关联对象的所有数据
   
   2.在模型类序列化器的内部定义的 Meta类「固定名称」的嵌套序列化层级属性:
   	depth	来简单的生成嵌套表示，depth应该是整数，表明嵌套的层级数量。
@@ -134,16 +147,18 @@
   ```
   APIView是REST framework提供的所有视图的基类，继承自Django的View父类。
   
-  APIView与View的不同之处在于：
-      传入到视图方法中的是REST framework的Request对象，而不是Django的HttpRequeset对象；
-      视图方法可以返回REST framework的Response对象，视图会为响应数据设置（render）符合前端要求的格式；
-      任何APIException异常都会被捕获到，并且处理成合适的响应信息；
-      在进行dispatch()分发前，会对请求进行身份认证、权限检查、流量控制。
+  APIView与View的不同之处在于:
+    传入到视图方法中的是REST framework的Request对象，而不是Django的HttpRequeset对象;
+    视图方法可以返回RESTframework的Response对象，视图会为响应数据设置（render）符合前端要求的格式;
+    任何APIException异常都会被捕获到，并且处理成合适的响应信息;
+    在进行dispatch()分发前，会对请求进行身份认证、权限检查、流量控制。
+  
   支持定义的属性：
-      authentication_classes 列表或元祖，身份认证类
-      permissoin_classes 列表或元祖，权限检查类
-      throttle_classes 列表或元祖，流量控制类
-      在APIView中仍以常规的类视图定义方法来实现get() 、post() 或者其他请求方式的方法。
+    authentication_classes 列表或元祖，身份认证类
+    permissoin_classes 列表或元祖，权限检查类
+    throttle_classes 列表或元祖，流量控制类
+  
+  在APIView中仍以常规的类视图定义方法来实现get() 、post() 或者其他请求方式的方法。
   ```
 
 - ##### GenericAPIView基类
@@ -164,13 +179,19 @@
   
   提供的方法：
       列表视图与详情视图通用：
-          get_queryset(self) 返回视图使用的查询集，是列表视图与详情视图获取数据的基础，默认返回queryset属性，可以重写.
+          get_queryset(self) 返回视图使用的查询集，是列表视图与详情视图获取数据的基础，默认返回
+          queryset属性，可以重写.
+          
           get_serializer_class(self) 返回序列化器类，默认返回serializer_class，可以重写.
-  		get_serializer(self, args, *kwargs) 返回序列化器对象，被其他视图或扩展类使用，如果我们在视图中想要获取序列化器对象，可以直接调用此方法。
+          
+  		get_serializer(self, args, *kwargs) 返回序列化器对象，被其他视图或扩展类使用，如果我们
+  		在视图中想要获取序列化器对象，可以直接调用此方法。
+  	
   	详情视图使用：
-          get_object(self) 返回详情视图所需的模型类数据对象，默认使用lookup_field参数来过滤queryset。 在试图中可以调用该方法获取详情信息的模型类对象。若详情访问的模型类对象不存在，会返回404。
-  该方法会默认使用APIView提供的check_object_permissions方法检查当前对象是否有权限被访问。
-  
+          get_object(self) 返回详情视图所需的模型类数据对象，默认使用lookup_field参数来过滤
+          queryset。 在试图中可以调用该方法获取详情信息的模型类对象。若详情访问的模型类对象不存在，会
+          返回404。该方法会默认使用APIView提供的check_object_permissions方法检查当前对象是否有权
+          限被访问。
   ```
 
 - ##### 视图集与自定义action动作
@@ -191,10 +212,12 @@
           在ViewSet中，没有提供任何动作action方法，需要我们自己实现action方法。
   
       2）GenericViewSet
-          继承自GenericAPIView，作用也与GenericAPIVIew类似，提供了get_object、get_queryset等方法便于列表视图与详情信息视图的开发。
+          继承自GenericAPIView，作用也与GenericAPIVIew类似，提供了get_object、get_queryset等方
+          法便于列表视图与详情信息视图的开发。
   
       3）ModelViewSet
-      	继承自GenericAPIVIew，同时包括了ListModelMixin、RetrieveModelMixin、CreateModelMixin、UpdateModelMixin、DestoryModelMixin。
+      	继承自GenericAPIVIew，同时包括了ListModelMixin、RetrieveModelMixin、
+      	CreateModelMixin、UpdateModelMixin、DestoryModelMixin。
   
       4）ReadOnlyModelViewSet
       	继承自GenericAPIVIew，同时包括了ListModelMixin、RetrieveModelMixin。
