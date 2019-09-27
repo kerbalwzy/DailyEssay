@@ -129,10 +129,10 @@
   ```
   1.在普通序列化器类和模型类序列化器类中作为 类属性显示声明:
   属性值可以是以下几种:
-  1.serializers.PrimaryKeyRelatedField(*args)			关联字段的主键
+  1.serializers.PrimaryKeyRelatedField(*args)		关联字段的主键
   2.serializers.HyperlinkedRelatedField(*args)		关联对象数据的接口链接
-  3.serializers.SlugRelatedField(*args)				关联对象的指定字段数据
-  4.直接是关联对象的序列化器								关联对象的所有数据
+  3.serializers.SlugRelatedField(*args)		关联对象的指定字段数据
+  4.直接是关联对象的序列化器		关联对象的所有数据
   
   2.在模型类序列化器的内部定义的 Meta类「固定名称」的嵌套序列化层级属性:
   	depth	来简单的生成嵌套表示，depth应该是整数，表明嵌套的层级数量。
