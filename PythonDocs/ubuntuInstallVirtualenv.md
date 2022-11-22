@@ -14,7 +14,7 @@
     其他正常使用python3或者通过安装源内的python3类库的不需要python3-dev.
     ```
 
-  - 2.通过命令`pip3 install virtualenv virtualenvwrapper`安装创建和管理虚拟环境的包. 这里之所以使用pip3,是为了后续在创建虚拟环境时不需通过`-p`参数来指定就可以直接创建Python3解释器的虚拟环境.当然完成这个默认设置还需要在接下来的步骤中做一点其他操作
+  - 2.通过命令`pip3 install pbr virtualenv virtualenvwrapper`安装创建和管理虚拟环境的包. 这里之所以使用pip3,是为了后续在创建虚拟环境时不需通过`-p`参数来指定就可以直接创建Python3解释器的虚拟环境.当然完成这个默认设置还需要在接下来的步骤中做一点其他操作
 
   - 3.在$HOME(家目录)下,创建一个`.virtualenvs`的隐藏文件夹,这个文件夹就是用来保存你未来创建的虚拟环境文件夹的父级目录
 
